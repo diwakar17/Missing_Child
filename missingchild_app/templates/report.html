@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Report!{% endblock %}
+
+{% block content %}
+    {% for children in child %}
+      <div class="container-fluid jumbotron card" style="margin-top:10px;">
+            <div class="row" style="margin-top:auto; margin-bottom:auto;">
+              <div class="col-sm-4 col-md-4">
+                <img src="{{children.image.url }}" class="float-left img-thumbnail" style="min-height:204px; !important;"/>
+              </div>
+              <div class="col-md-8 col-sm-8" style="margin-top:auto; margin-bottom:auto;">
+                <div class="card" style="padding:5px;">
+                  <div class="card-header">
+                    <div class="title">
+                      {{children.name}}
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      {{children.age}}
+                    <div class="card-text">
+                      {{children.details}}
+                      </div>
+                  </div>
+                  <div class="card-footer">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+          <a href="{% url 'upload' %}" class="btn btn-success float-right"style="max-width:100px !important;">Upload</a>
+{% endblock %}

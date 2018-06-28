@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}uploads{% endblock %}
+
+{% block content %}
+  <h2>Give information about your loving child here! :-)</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in upload_form %}
+      <p>{{ field.label_tag }}
+         {{ field }}
+
+         {% for error in field.errors %}
+         <p style="color: red">{{ error }}</p>
+         {% endfor %}
+     </p>
+     {% endfor %}
+  <button type="submit" name="upload" style="color:red;cursor:pointer;background-color:white;">upload</button>
+ </form>
+ <a href="{% url 'home' %}">return to home page</a>
+{% endblock %}

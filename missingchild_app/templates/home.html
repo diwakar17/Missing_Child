@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Logins{% endblock %}
+
+{% block content %}
+  <h2>Home</h2>
+  {% for children in child  %}
+  <div class="card jumbotron">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+         <img src="{{children.image.url}}" alt="{{children.image}}" height="200px" width="200px">
+       </div>
+       <div class="col-sm-8 col-md-8 card">
+         <div class="card-header">
+           <p style="color:blue;">Name</p>
+           {{children.name}}
+         </div>
+         <div class="card-text">
+           <p style="color:blue;">Age</p>
+           {{children.age}}
+         </div>
+         <div class="card-footer">
+           <p style="color:blue;">Details</p>
+           {{children.details}}
+         </div>
+
+       </div>
+    </div>
+  </div>
+
+  {% endfor %}
+  <a href="{% url 'upload' %}" class="btn btn-success float-right">upload here!</a>
+{% endblock %}
