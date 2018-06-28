@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'missing_child.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'missingchild',
-        'USER':'root',
-        'PASSWORD':'diwakar',
-        'HOST':'localhost',
-        'PORT':'',
+        # 'USER':'root',
+        # 'PASSWORD':'diwakar',
+        # 'HOST':'localhost',
+        # 'PORT':'',
     }
 }
 
